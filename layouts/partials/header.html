@@ -24,18 +24,16 @@
 
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-              <a class="nav-item nav-link {{ if eq .URL "/"}}active{{ end }}" href="/">Home</a>
+              <a class="nav-item nav-link {{ if eq .RelPermalink "/" }}active{{ end }}" href="/">Home</a>
               {{ with .Site.Params.github }}<a class="nav-item nav-link" href="https://github.com/{{ . }}" target="_blank">GitHub</a>{{ end }}
               {{ with .Site.Params.gitlab }}<a class="nav-item nav-link" href="https://gitlab.com/{{ . }}" target="_blank">GitLab</a>{{ end }}
-              <a class="nav-item nav-link {{ if eq .URL "/about.html"}}active{{ end }}" href="/about.html">About</a>
-              <a class="nav-item nav-link {{ if eq .URL "/post/index.xml"}}active{{ end }}" href="/post/index.xml">RSS</a>
+              <a class="nav-item nav-link {{ if eq .RelPermalink "/about.html" }}active{{ end }}" href="/about.html">About</a>
+              <a class="nav-item nav-link {{ if eq .RelPermalink "/post/index.xml" }}active{{ end }}" href="/post/index.xml">RSS</a>
             </div>
           </div>
         </nav>
 
         <section id="page-title">
-          <h1><a href="/">{{ .Site.Title | default "Basics"}}</a></h1>
-          <span id="author-name">
-            <h6>Software Design, and my life.</h6>
-          </span>
+          <h1><a href="/">{{ .Site.Title | default "Basics" }}</a></h1>
+          <p id="page-description">Software Design, and my life.</p>
         </section>
