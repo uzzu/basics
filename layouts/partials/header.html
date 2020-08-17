@@ -5,8 +5,17 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
         {{ template "_internal/opengraph.html" . }}
+        {{ with $.Site.Params.twitterID }}
         <meta name="twitter:card" content="summary"/>
-        <meta name="twitter:site" content="{{$.Site.Params.twitterID}}"/>
+        <meta name="twitter:site" content="{{ . }}"/>
+        {{ with $.Params.Images }}
+        <meta name="twitter:image" content="{{ index . 0 | absURL }}"/>
+        {{ else }}
+        {{ with $.Site.Params.twitterImage }}
+        <meta name="twitter:image" content="{{ . | absURL }}"/>
+        {{ end }}
+        {{ end }}
+        {{ end }}
         <link href="https://fonts.googleapis.com/css?family=Ubuntu|Ubuntu+Mono" rel="stylesheet">
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link rel="stylesheet" href="/css/stylesheet.css">
