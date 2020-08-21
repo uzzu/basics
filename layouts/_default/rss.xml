@@ -1,7 +1,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>{{ $.Site.Title }}</title>
-    <description>unko:Recent content in {{ $.Site.Title }}</description>
+    <description>Recent content in {{ $.Site.Title }}</description>
     <link>{{ .Permalink }}</link>{{ if $.Site.Params.images }}
     <image>
       <url>{{ index $.Site.Params.images 0 | absURL }}</url>
