@@ -43,7 +43,7 @@
               {{ with .Site.Params.github }}<a class="nav-item nav-link" href="https://github.com/{{ . }}" target="_blank">GitHub</a>{{ end }}
               {{ with .Site.Params.gitlab }}<a class="nav-item nav-link" href="https://gitlab.com/{{ . }}" target="_blank">GitLab</a>{{ end }}
               <a class="nav-item nav-link {{ if eq .RelPermalink "/about.html" }}active{{ end }}" href="/about.html">About</a>
-              <a class="nav-item nav-link {{ if eq .RelPermalink "/post/index.xml" }}active{{ end }}" href="/post/index.xml">RSS</a>
+              <a class="nav-item nav-link {{ if eq .RelPermalink "/index.xml" }}active{{ end }}" href="/index.xml">RSS</a>
             </div>
           </div>
         </nav>
