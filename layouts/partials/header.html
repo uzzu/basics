@@ -5,17 +5,10 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
         {{ template "_internal/opengraph.html" . }}
-        {{ with $.Site.Params.twitterID }}
-        <meta name="twitter:card" content="summary"/>
-        <meta name="twitter:site" content="{{ . }}"/>
-        {{ with $.Params.Images }}
-        <meta name="twitter:image" content="{{ index . 0 | absURL }}"/>
-        {{ else }}
-        {{ with $.Site.Params.twitterImage }}
-        <meta name="twitter:image" content="{{ . | absURL }}"/>
-        {{ end }}
-        {{ end }}
-        {{ end }}
+        {{ with $.Site.Params.twitterID }}<meta name="twitter:card" content="summary"/>
+        <meta name="twitter:site" content="{{ . }}"/>{{ with $.Params.Images }}
+        <meta name="twitter:image:src" content="{{ index . 0 | absURL }}"/>{{ else }}{{ with $.Site.Params.twitterImage }}
+        <meta name="twitter:image:src" content="{{ . | absURL }}"/>{{ end }}{{ end }}{{ end }}
         {{ with .OutputFormats.Get "rss" -}}
         {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
         {{ end -}}
