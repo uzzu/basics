@@ -38,6 +38,7 @@ body {
 
 .posts_listing li {
   list-style-type: none;
+  margin: 0.5rem;
 }
 
 h1 {
